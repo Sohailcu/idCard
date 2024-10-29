@@ -1,0 +1,154 @@
+body {
+  font-family: sans-serif-bold, monospace;
+  background-color: #ddf1f1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: large;
+}
+
+.form-container {
+  background-color: #d4d4d4da;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(51, 50, 50, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: medium;
+}
+
+.form-container input, .form-container button {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  font-variant: small-caps;
+}
+
+#cardPreview {
+  display: none;
+}
+
+.card-container {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #fff;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #000;
+}
+
+.employee-photo {
+  width: 120px;
+  height: 140px;
+  border: 1px solid #000;
+  margin: 10px auto;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  border-color: gray;
+}
+
+.employee-photo img {
+  object-fit: cover;
+  margin-top: auto;
+}
+
+.employee-details {
+  padding: 20px;
+  padding-top: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: bolder, initial;
+  margin-top: -2%;
+}
+
+.employee-details p {
+  margin: 5px 0;
+  font-family: monospace;
+  font-weight: bolder, initial;
+}
+
+.back-details {
+  text-align: center;
+  padding-top: 20px auto;
+  font-size: small;
+  font-family: monospace;
+}
+
+/* QR Code Styling on the Back */
+.qr-code-back {
+  margin-top: 10px auto;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 80%;
+}
+
+.auth-signature-back { 
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  margin-top: -29%;
+  text-align: center;
+  padding-left: 40%;
+}
+
+/* Adjust the canvas for the QR code to fit */
+.qr-code-back canvas {
+  width: 70px;
+  height: 70px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0.3%;
+  width: 100%; /* Ensure the footer takes the full width */
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  background-color: rgb(0, 58, 0);
+  box-sizing: border-box;
+  font-weight: bold;
+  border: 1px solid rgb(221, 2, 2);
+  border-radius: 10px; 
+}
+
+/* Media query for printing */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* Chrome, Safari */
+    print-color-adjust: exact; /* Firefox */
+  }
+
+  .form-container, button {
+    display: none; /* Hide form and buttons but card show*/ 
+  }
+  /* Ensure ID card prints in specified dimensions */
+  .card-container {
+    width: 300px;
+    height: 500px;
+    background-size: cover; /* Keep background intact */
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
+    page-break-inside:avoid;
+    border: 1px solid #000; /* Make border visible in print */
+  }
+}
+
+ /* Arrange front and back side on the same page */
+ .print-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
